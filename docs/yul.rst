@@ -11,7 +11,7 @@ compiled to bytecode output for different backends.
 
 Support for EVM 1.0, EVM 1.5 and eWASM is planned, and it is designed to be a usable common denominator of all three
 platforms. It can already be used for "inline assembly" inside Solidity and future versions of the Solidity compiler
-will use Yul as an intermediate language. It should also be easy to build high-level optimizer stages for Yul.
+will use Yul as an intermediate language. Yul is a good target for high-level optimization stages (that can benefit all target platforms equally).
 
 With the "inline assembly" flavour, Yul can be used as a language setting
 for the :ref:`standard-json interface <compiler-api>`:
@@ -31,7 +31,8 @@ And on the command line interface with the ``--strict-assembly`` parameter.
 
 .. warning::
 
-    Yul is in active development and its bytecode output is fully implemented for the "strict assembly" flavour which
+    Yul is in active development and bytecode generation is fully implemented only for untyped Yul (which does not have types; everything is u256) and with EVM 1.0 as target (EVM opcodes are used as built-in functions).
+    Typed Yul will use a different set of built-in functions and is not yet implemented.
     does not have types (everything is ``u256``) and uses :ref:`EVM opcodes <opcodes>` as built-in functions.
 
     The "strict yul" flavour that has types and a different set of built-in functions is not yet implemented.
