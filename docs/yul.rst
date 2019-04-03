@@ -11,7 +11,7 @@ compile bytecode output for different backends.
 
 Support for EVM 1.0, EVM 1.5 and eWASM is planned, and it is designed to be a usable common denominator of all three
 platforms. It can already be used for "inline assembly" inside Solidity and future versions of the Solidity compiler
-will use Yul as an intermediate language. It should also be easy to build high-level optimizer stages for Yul.
+will use Yul as an intermediate language. Yul is a good target for high-level optimization stages (that can benefit all target platforms equally).
 
 With the "inline assembly" flavour, Yul can be used as a language setting
 for the :ref:`standard-json interface <compiler-api>`:
