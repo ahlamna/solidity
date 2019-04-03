@@ -6,8 +6,8 @@ Yul
 
 .. index:: ! assembly, ! asm, ! evmasm, ! yul, julia, iulia
 
-Yul (previously also called JULIA or IULIA) is an intermediate language that can
-compile bytecode output for different backends.
+Yul (previously also called JULIA or IULIA) is an intermediate language that can be
+compiled to bytecode output for different backends.
 
 Support for EVM 1.0, EVM 1.5 and eWASM is planned, and it is designed to be a usable common denominator of all three
 platforms. It can already be used for "inline assembly" inside Solidity and future versions of the Solidity compiler
