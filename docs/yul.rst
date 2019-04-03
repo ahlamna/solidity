@@ -31,7 +31,8 @@ And on the command line interface with the ``--strict-assembly`` parameter.
 
 .. warning::
 
-    Yul is in active development and its bytecode output is fully implemented for the "strict assembly" flavour which
+    Yul is in active development and bytecode generation is fully implemented only for untyped Yul (which does not have types; everything is u256) and with EVM 1.0 as target (EVM opcodes are used as built-in functions).
+    Typed Yul will use a different set of built-in functions and is not yet implemented.
     does not have types (everything is ``u256``) and uses :ref:`EVM opcodes <opcodes>` as built-in functions.
 
     The "strict yul" flavour that has types and a different set of built-in functions is not yet implemented.
