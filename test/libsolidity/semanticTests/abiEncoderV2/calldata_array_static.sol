@@ -20,5 +20,5 @@ contract C {
 // g(uint256[3]): 23, 42, 87 -> 32, 96, 23, 42, 87
 // h(uint8[3]): 23, 42, 87 -> 32, 96, 23, 42, 87
 // i(uint8[3]): 23, 42, 87 -> 32, 96, 23, 42, 87
-// h(uint8[3]): 0xFF23, 0x1242, 0xAB87 -> 32, 96, 0x23, 0x42, 0x87 # should revert with strict abi decoding #
-// i(uint8[3]): 0xAB23, 0x1242, 0xFF87 -> 32, 96, 0x23, 0x42, 0x87 # should revert with strict abi decoding #
+// h(uint8[3]): 0xFF23, 0x1242, 0xAB87 -> FAILURE
+// i(uint8[3]): 0xAB23, 0x1242, 0xFF87 -> FAILURE
