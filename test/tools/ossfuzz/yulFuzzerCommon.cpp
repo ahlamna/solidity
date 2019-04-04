@@ -26,14 +26,7 @@ void yulFuzzerUtil::interpret(ostream& _os, shared_ptr<yul::Block> _ast)
 	state.maxTraceSize = 75;
 	state.maxSteps = 100;
 	Interpreter interpreter(state);
-	try
-	{
-		interpreter(*_ast);
-	}
-	catch (ExplicitlyTerminated const&)
-	{
-	}
-
+	interpreter(*_ast);
 	_os << "Trace:" << endl;
 	for (auto const& line: interpreter.trace())
 		_os << "  " << line << endl;

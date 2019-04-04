@@ -76,12 +76,12 @@ DEFINE_PROTO_FUZZER(Function const& _input)
 	{
 		yulFuzzerUtil::interpret(os1, stack.parserResult()->code);
 	}
-	catch (yul::test::TraceLimitReached const&)
-	{
-	}
 	catch (yul::test::StepLimitReached const&)
 	{
 		return;
+	}
+	catch (yul::test::InterpreterTerminated const&)
+	{
 	}
 
 	stack.optimize();
@@ -89,10 +89,7 @@ DEFINE_PROTO_FUZZER(Function const& _input)
 	{
 		yulFuzzerUtil::interpret(os2, stack.parserResult()->code);
 	}
-	catch (yul::test::TraceLimitReached const&)
-	{
-	}
-	catch (yul::test::StepLimitReached const&)
+	catch (yul::test::InterpreterTerminated const&)
 	{
 	}
 

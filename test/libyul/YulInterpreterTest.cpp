@@ -137,13 +137,7 @@ string YulInterpreterTest::interpret()
 	{
 		interpreter(*m_ast);
 	}
-	catch (ExplicitlyTerminated const&)
-	{
-	}
-	catch (StepLimitReached const&)
-	{
-	}
-	catch (TraceLimitReached const&)
+	catch (InterpreterTerminated const&)
 	{
 	}
 

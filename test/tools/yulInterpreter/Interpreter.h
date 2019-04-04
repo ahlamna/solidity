@@ -35,15 +35,19 @@ namespace yul
 namespace test
 {
 
-class ExplicitlyTerminated: dev::Exception
+class InterpreterTerminated: dev::Exception
 {
 };
 
-class StepLimitReached: dev::Exception
+class ExplicitlyTerminated: InterpreterTerminated
 {
 };
 
-class TraceLimitReached: dev::Exception
+class StepLimitReached: InterpreterTerminated
+{
+};
+
+class TraceLimitReached: InterpreterTerminated
 {
 };
 

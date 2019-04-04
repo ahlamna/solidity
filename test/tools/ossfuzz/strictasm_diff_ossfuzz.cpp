@@ -80,12 +80,12 @@ extern "C" int LLVMFuzzerTestOneInput(uint8_t const* _data, size_t _size)
 	{
 		yulFuzzerUtil::interpret(os1, stack.parserResult()->code);
 	}
-	catch (yul::test::TraceLimitReached const&)
-	{
-	}
 	catch (yul::test::StepLimitReached const&)
 	{
 		return 0;
+	}
+	catch (yul::test::InterpreterTerminated const&)
+	{
 	}
 
 	stack.optimize();
@@ -93,10 +93,7 @@ extern "C" int LLVMFuzzerTestOneInput(uint8_t const* _data, size_t _size)
 	{
 		yulFuzzerUtil::interpret(os2, stack.parserResult()->code);
 	}
-	catch (yul::test::TraceLimitReached const&)
-	{
-	}
-	catch (yul::test::StepLimitReached const&)
+	catch (yul::test::InterpreterTerminated const&)
 	{
 	}
 
